@@ -6,7 +6,6 @@ function getNewColor() {  //creating random color + seeting it to bg
     //creating random color code
     color += SYMBOLS[Math.floor(Math.random() * MAGIC_NUMBER)];
   }
-  console.log(color);
   document.body.style.background = color; //setting the random color code on the background
 
   document.getElementById("hex").innerHTML = color; //showing current color code on UI
