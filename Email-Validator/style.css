@@ -1,0 +1,129 @@
+:root {
+  --gradient: linear-gradient(90deg, #f48544, #d52e6f, #e82e54);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Code Pro", monospace;
+}
+
+body {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 300%;
+  background-image: var(--gradient);
+  animation: bg-animation 25s infinite;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+h2 {
+  position: relative;
+  font-size: 22px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#form {
+  position: relative;
+}
+
+#form #email {
+  width: 400px;
+  background: rgba(67, 2, 2, 0.964);
+  outline: none;
+  border: none;
+  padding: 10px 35px 10px 10px;
+  border-radius: 4px;
+  font-style: italic;
+  font-size: 13px;
+  color: white;
+}
+
+::placeholder {
+  color: #ff981aa3;
+}
+
+#form .inputBox {
+  position: relative;
+}
+
+#text {
+  display: block;
+  margin-top: 4px;
+  /* border: 0.1px solid white; */
+  background: rgba(67, 2, 2, 0.964);
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 3=500;
+  color: white;
+  text-align: center;
+}
+
+#form.invalid .inputBox:before {
+  content: "";
+  position: absolute;
+  right: 5px;
+  top: 7px;
+  width: 24px;
+  height: 24px;
+  background: url(icons/invalid.png);
+  background-size: cover;
+  z-index: 1000;
+}
+
+#form.valid .inputBox:before {
+  content: "";
+  position: absolute;
+  right: 5px;
+  top: 7px;
+  width: 24px;
+  height: 24px;
+  background: url(icons/valid.png);
+  background-size: cover;
+  z-index: 1000;
+}
+
+/*footer */
+
+.footer{
+  
+  font-family: "Source Code Pro", monospace;
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+
+}
+
+.footer p{
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  font-weight: 200;
+}
+
+.footer h4 {
+  margin-top: 5px;
+  text-align: center;
+  color: white;
+}
+
