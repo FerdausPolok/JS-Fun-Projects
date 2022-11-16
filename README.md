@@ -2,7 +2,7 @@
 Some small fun projects using JavaScript
 
 ##  1. Random Color Generator
-![banner](https://ibb.co/JzHd5VX)
+![Alt text](https://ibb.co/JzHd5VX "Banner")
 
 Generates a random color code and set this code to the background on button click! 
 
