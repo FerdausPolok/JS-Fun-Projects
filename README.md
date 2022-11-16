@@ -8,7 +8,6 @@ Generates a random color code and set this code to the background on button clic
 ## Enjoy Live 👉 [Here](https://ferdauspolok.github.io/JS-Fun-Projects/Random-Color-Generator/)
 -----
 ##  2. Email Validator
------
 ![Email Validator](https://user-images.githubusercontent.com/68804751/202177207-42c6ea0b-33c9-4b8c-bb13-b92794cfd2e9.png)
 Checks if an email address is valid or not! 
 ## Enjoy Live 👉 [Here](https://ferdauspolok.github.io/JS-Fun-Projects/Email-Validator/)
