@@ -1,5 +1,5 @@
 :root {
-  --gradient: linear-gradient(90deg, #f48544, #d52e6f, #e82e54);
+  --gradient: linear-gradient(90deg,#e82e54, #f48544, #d52e6f);
 }
 
 * {
@@ -106,10 +106,10 @@ h2 {
 .footer{
   
   font-family: "Source Code Pro", monospace;
-  position: fixed;
+  position: absolute;
   left: 50%;
-  bottom: 20px;
-  transform: translate(-50%, -50%);
+  bottom: 50px;
+  transform: translate(-50%, 50%);
   margin: 0 auto;
 
 }
