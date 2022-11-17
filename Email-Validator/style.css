@@ -45,7 +45,7 @@ h2 {
 }
 
 #form #email {
-  width: 400px;
+  width: 300px;
   background: rgba(67, 2, 2, 0.964);
   outline: none;
   border: none;
@@ -72,7 +72,7 @@ h2 {
   padding: 5px;
   border-radius: 4px;
   font-size: 11px;
-  font-weight: 3=500;
+  font-weight: 350;
   color: white;
   text-align: center;
 }
