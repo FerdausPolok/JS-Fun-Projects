@@ -22,7 +22,6 @@ searchBtn.addEventListener("click", (e) => {
                         //     //send repo rata
                         //     ui.showRepo(data2)
                         // }
-
                     })
                 //console.log(data.repos_url);
 
