@@ -16,9 +16,9 @@ class UI {
             <a href="${user.html_url}" target="_blank" class="btn btn-primary btn-block mb-1" style= "border-radius: 4px;" >View Profile</a>
         </div>
           <div class="col-md-9">
-            <span class="badge badge-primary">Public Repos: ${user.public_repos}</span>
-            <span class="badge badge-success">Followers: ${user.followers}</span>
-            <span class="badge badge-info">Following: ${user.following}</span>
+            <span class="badge badge-danger">Public Repos: ${user.public_repos}</span>
+            <span class="badge badge-info">Followers: ${user.followers}</span>
+            <span class="badge badge-warning">Following: ${user.following}</span>
             <br><br>
             <ul class="list-group">
             <li class="list-group-item"> <b> Username: </b> ${user.login} </li>
@@ -64,7 +64,7 @@ class UI {
     let search = document.querySelector(".search");
     container.insertBefore(div, search);
   }
-  
+
   clearAlert() {
     //for sake on not getting list of alerts
     let currentAlert = document.querySelector(".alert");
