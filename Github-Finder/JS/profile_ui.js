@@ -5,7 +5,7 @@ class UI {
   }
 
   showProfile(profile, repo, haveRepo) {
-    this.clearAlert();
+    this.clearAlert(); //Clear if there is a alart showing from last search result
 
     //populate li into a string in case of having public repo
     if(haveRepo){
@@ -21,6 +21,7 @@ class UI {
       str= "<h6> This user doen't have any Public Repo. 🙂 </h6>"
     }
 
+    //populating the main content div #profile
     this.profile.innerHTML = `
         <div class="card card-body mb-3 ">
         <div class="row">
@@ -67,8 +68,8 @@ class UI {
   }
 
   showAlert(message, className) {
-    this.clearAlert();
-    this.clearProfile();
+    this.clearAlert(); //for clearing previous alert if there is any
+    this.clearProfile(); //for clearing the main div if there is any previous profile data
     let div = document.createElement("div");
     div.className = className;
     div.appendChild(document.createTextNode(message));
@@ -78,7 +79,7 @@ class UI {
   }
 
   clearAlert() {
-    //for sake on not getting list of alerts
+    //for sake on not getting a list of alerts (clear previous alert)
     let currentAlert = document.querySelector(".alert");
     if (currentAlert) {
       currentAlert.remove();
