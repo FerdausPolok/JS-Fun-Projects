@@ -11,7 +11,7 @@ class UI {
     if(haveRepo){
       var str = '<ul>'
       for (var i = 0; i < repo.length; i++) {
-        str += '<li>' + repo[i].name + '</li>';
+        str += '<li>' + repo[i].name + '<a target="_blank" href=' + repo[i].html_url +'> <button class="btn btn-outline-dark rounded mt-2 mb-2 btn-sm" >View on GitHub</button>  </a> </li>'
       }
       str += '</ul>';
     }
