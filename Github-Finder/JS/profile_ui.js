@@ -70,12 +70,12 @@ class UI {
   showAlert(message, className) {
     this.clearAlert(); //for clearing previous alert if there is any
     this.clearProfile(); //for clearing the main div if there is any previous profile data
-    let div = document.createElement("div");
-    div.className = className;
-    div.appendChild(document.createTextNode(message));
+    let div = document.createElement("div"); //creating div for alert
+    div.className = className; //setting given classname while calling the fn
+    div.appendChild(document.createTextNode(message)); //setting the given alert message while calling the fn
     let container = document.querySelector(".searchContainer");
     let search = document.querySelector(".search");
-    container.insertBefore(div, search);
+    container.insertBefore(div, search); //placing newly created div before search
   }
 
   clearAlert() {
