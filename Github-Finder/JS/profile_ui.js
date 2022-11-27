@@ -4,8 +4,17 @@ class UI {
     this.profile = document.querySelector("#profile");
   }
 
-  showProfile(user) {
+  showProfile(user, repo) {
     this.clearAlert();
+    var str = '<ul>'
+
+    //looping through the repor data and saing all the repo name as li inside a string
+    for (var i = 0; i < repo.length; i++) {
+      str += '<li>' + repo[i].name + '</li>';
+    }
+
+    str += '</ul>';
+
     this.profile.innerHTML = `
         <div class="card card-body mb-3 ">
         <div class="row">
@@ -39,7 +48,7 @@ class UI {
         <p target="_blank" class="btn btn-dark btn-block mb-1" style= "border-radius: 4px;" >Public Repositories</p>
 
           <ul class="list-group">
-            <li class="list-group-item"> <b> Will Implement Soon! </b></li>
+                ${str}
           </ul>
         
           </div>

@@ -14,14 +14,13 @@ searchBtn.addEventListener("click", (e) => {
                     .then(result => result.json())
                     .then(data2 => {
                         console.log(data2);
-                        // ui.showRepo(data2)
-                        // if(data2.message== 'Not Found'){
-                        //     //Show Alert that usernamen not found
-                        //     ui.showAlert("User not found!", "alert alert-danger")
-                        // } else{
-                        //     //send repo rata
-                        //     ui.showRepo(data2)
-                        // }
+                        if (data2.message == 'Not Found') {
+                            //Show Alert that usernamen not found
+                            ui.showAlert("User not found!", "alert alert-danger")
+                        } else {
+                            //send profile data
+                            ui.showProfile(data, data2)
+                        }
                     })
                 //console.log(data.repos_url);
 
