@@ -4,15 +4,22 @@ class UI {
     this.profile = document.querySelector("#profile");
   }
 
-  showProfile(profile, repo) {
+  showProfile(profile, repo, haveRepo) {
     this.clearAlert();
-    var str = '<ul>'
 
-    //looping through the repor data and saing all the repo name as li inside a string
-    for (var i = 0; i < repo.length; i++) {
-      str += '<li>' + repo[i].name + '</li>';
+    //populate li into a string in case of having public repo
+    if(haveRepo){
+      var str = '<ul>'
+      for (var i = 0; i < repo.length; i++) {
+        str += '<li>' + repo[i].name + '</li>';
+      }
+      str += '</ul>';
     }
-    str += '</ul>';
+    
+    //in case of not having public repo
+    else{
+      str= "<h6> This user doen't have any Public Repo. 🙂 </h6>"
+    }
 
     this.profile.innerHTML = `
         <div class="card card-body mb-3 ">
@@ -44,11 +51,12 @@ class UI {
 
       <div class="card card-body mb-3 ">
         <div class="col-md-12">
-        <p target="_blank" class="btn btn-dark btn-block mb-1" style= "border-radius: 4px;" >Public Repositories</p>
+          <p target="_blank" class="btn btn-dark btn-block mb-1" style= "border-radius: 4px;" >Public Repositories</p>
+          <br>  
           <ul class="list-group">
-                ${str}
+            ${str}
           </ul>
-          </div>
+        </div>
       </div>
     </div>
         `;
