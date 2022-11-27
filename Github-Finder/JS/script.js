@@ -8,28 +8,28 @@ searchBtn.addEventListener("click", (e) => {
         //Geting User Data via Fetch API
         fetch(`https://api.github.com/users/${userGivenText}`)
             .then(result => result.json())
-            .then(data => {
+            .then(profile_data => {
                 //Geting User Repo Data via Fetch API   
-                fetch(data.repos_url)
+                fetch(profile_data.repos_url)
                     .then(result => result.json())
-                    .then(data2 => {
-                        console.log(data2);
-                        if (data2.message == 'Not Found') {
+                    .then(repo_data => {
+                        console.log(repo_data);
+                        if (repo_data.message == 'Not Found') {
                             //Show Alert that usernamen not found
                             ui.showAlert("User not found!", "alert alert-danger")
                         } else {
                             //send profile data
-                            ui.showProfile(data, data2)
+                            ui.showProfile(profile_data, repo_data)
                         }
                     })
                 //console.log(data.repos_url);
 
-                if (data.message == 'Not Found') {
+                if (profile_data.message == 'Not Found') {
                     //Show Alert that usernamen not found
                     ui.showAlert("User not found!", "alert alert-danger")
                 } else {
                     //send profile data
-                    ui.showProfile(data)
+                    ui.showProfile(profile_data)
                 }
             })
 

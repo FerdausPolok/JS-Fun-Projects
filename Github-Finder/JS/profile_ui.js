@@ -4,7 +4,7 @@ class UI {
     this.profile = document.querySelector("#profile");
   }
 
-  showProfile(user, repo) {
+  showProfile(profile, repo) {
     this.clearAlert();
     var str = '<ul>'
 
@@ -12,32 +12,31 @@ class UI {
     for (var i = 0; i < repo.length; i++) {
       str += '<li>' + repo[i].name + '</li>';
     }
-
     str += '</ul>';
 
     this.profile.innerHTML = `
         <div class="card card-body mb-3 ">
         <div class="row">
         <div class="col-md-3">
-            <img class="img-fluid mb-2" src="${user.avatar_url}">
-            <p target="_blank" class="btn btn-dark btn-block mb-1" style= "border-radius: 4px;" >${user.name}</p>
-            <p class="text-center list-group-item mb-1" style= "font-size: 14px; font-family: sans-serif; " >${user.bio} </p>
-            <a href="${user.html_url}" target="_blank" class="btn btn-primary btn-block mb-1" style= "border-radius: 4px;" >View Profile</a>
+            <img class="img-fluid mb-2" src="${profile.avatar_url}">
+            <p target="_blank" class="btn btn-dark btn-block mb-1" style= "border-radius: 4px;" >${profile.name}</p>
+            <p class="text-center list-group-item mb-1" style= "font-size: 14px; font-family: sans-serif; " >${profile.bio} </p>
+            <a href="${profile.html_url}" target="_blank" class="btn btn-primary btn-block mb-1" style= "border-radius: 4px;" >View Profile</a>
         </div>
           <div class="col-md-9">
-            <span class="badge badge-danger">Public Repos: ${user.public_repos}</span>
-            <span class="badge badge-info">Followers: ${user.followers}</span>
-            <span class="badge badge-warning">Following: ${user.following}</span>
+            <span class="badge badge-danger">Public Repos: ${profile.public_repos}</span>
+            <span class="badge badge-info">Followers: ${profile.followers}</span>
+            <span class="badge badge-warning">Following: ${profile.following}</span>
             <br><br>
             <ul class="list-group">
-            <li class="list-group-item"> <b> Username: </b> ${user.login} </li>
-            <li class="list-group-item"> <b> ID: </b> ${user.id} </li>
-            <li class="list-group-item"> <b> Email: </b> ${user.email} </li>
-            <li class="list-group-item"> <b> Company: </b> ${user.company} </li>
-            <li class="list-group-item"> <b> Website/Blog: </b> ${user.blog} </li>
-            <li class="list-group-item"> <b> Location: </b> ${user.location} </li>
-            <li class="list-group-item"> <b> Member Since: </b> ${user.created_at.slice(0, 7)} </li> 
-            <li class="list-group-item"> <b> Last Contribution: </b> ${user.updated_at.slice(0, 7)} </li> 
+            <li class="list-group-item"> <b> profilename: </b> ${profile.login} </li>
+            <li class="list-group-item"> <b> ID: </b> ${profile.id} </li>
+            <li class="list-group-item"> <b> Email: </b> ${profile.email} </li>
+            <li class="list-group-item"> <b> Company: </b> ${profile.company} </li>
+            <li class="list-group-item"> <b> Website/Blog: </b> ${profile.blog} </li>
+            <li class="list-group-item"> <b> Location: </b> ${profile.location} </li>
+            <li class="list-group-item"> <b> Member Since: </b> ${profile.created_at.slice(0, 7)} </li> 
+            <li class="list-group-item"> <b> Last Contribution: </b> ${profile.updated_at.slice(0, 7)} </li> 
             </ul>
           </div>
         </div>
@@ -46,18 +45,14 @@ class UI {
       <div class="card card-body mb-3 ">
         <div class="col-md-12">
         <p target="_blank" class="btn btn-dark btn-block mb-1" style= "border-radius: 4px;" >Public Repositories</p>
-
           <ul class="list-group">
                 ${str}
           </ul>
-        
           </div>
       </div>
     </div>
         `;
   }
-
-  showRepo(user) { }
 
   clearProfile() {
     this.profile.innerHTML = "";
