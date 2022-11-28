@@ -16,7 +16,7 @@ class UI {
           repo[i].name +
           '<a target="_blank" href=' +
           repo[i].html_url +
-          '> <button class="btn btn-outline-dark rounded mt-2 mb-2 btn-sm" >View on GitHub</button>  </a> </li>';
+          '><button class="btn btn-outline-dark rounded ml-2 mt-2 mb-2 btn-sm">View on GitHub</button> </a> </li>';
       }
       str += "</ul>";
     }
