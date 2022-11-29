@@ -1,13 +1,13 @@
 .success, .error {
     color: white;
-    padding: 5px;
-    margin: 5px 0 15px 0;
+    padding: 5px 5px 5px 10px;
+    margin: 10px 0 15px 0;
 }
 
 .success {
-    background: green;
+    background: rgb(13, 122, 13);
 }
 
 .error {
-    background: red;
+    background: rgb(229, 33, 33);
 }

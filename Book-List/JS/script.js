@@ -13,21 +13,29 @@ class Book{
 //Add EL
 form.addEventListener('submit', newBook);
 
-
 //Writting functions
 function newBook(e){
     // console.log("submitted")
     let title= document.querySelector("#title").value;
     let author= document.querySelector("#author").value;
     let isbn= document.querySelector("#isbn").value;
-
-    let book = new Book(title, author, isbn);
-    //console.log(book)
     let ui = new UI
-    
-    ui.addBookList(book)
-    ui.clearFields()
-    e.preventDefault();
+
+    if(title == "" || author == "" || isbn == "" ){
+        ui.showalert("Please Fill up all the boxes bellow & try again!", "error")
+    }
+
+    else{
+        let book = new Book(title, author, isbn);
+        //console.log(book)
+        ui.addBookList(book)
+        ui.clearFields()
+        e.preventDefault();
+
+        ui.showalert("Book Added!", "success")
+    }
+
+
     
 }
 
@@ -54,5 +62,19 @@ class UI{ //To Add books in the table data
         let title= document.querySelector("#title").value = "";
         let author= document.querySelector("#author").value = "";
         let isbn= document.querySelector("#isbn").value = "";
+    }
+
+    showalert(message, alertClassName){
+        let div = document.createElement('div');
+        div.className = `alert ${alertClassName}`; //will create a div with diff alert class of skeleton css
+        div.appendChild(document.createTextNode(message));
+        let container = document.querySelector(".container");
+        let form = document.querySelector("#book-form");
+        container.insertBefore(div, form); //will add div before form after container
+
+        setTimeout(function(){ //to vanish the alert after 3s
+            document.querySelector(".alert").remove();
+        }, 3000)
+
     }
 }
