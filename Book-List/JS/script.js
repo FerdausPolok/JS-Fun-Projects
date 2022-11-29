@@ -1,5 +1,6 @@
 //Getting the UI elements
 let form = document.querySelector('#book-form');
+let bookList= document.querySelector('#book-list');
 
 //Book Class
 class Book{
@@ -10,8 +11,9 @@ class Book{
     }
 }
 
-//Add EL
+//Add EeventListeners
 form.addEventListener('submit', newBook);
+bookList.addEventListener('click', removeBook);
 
 //Writting functions
 function newBook(e){
@@ -19,32 +21,31 @@ function newBook(e){
     let title= document.querySelector("#title").value;
     let author= document.querySelector("#author").value;
     let isbn= document.querySelector("#isbn").value;
-    let ui = new UI
 
     if(title == "" || author == "" || isbn == "" ){
-        ui.showalert("Please Fill up all the boxes bellow & try again!", "error")
+        UI.showalert("Please Fill up all the boxes bellow & try again!", "error")
     }
 
     else{
         let book = new Book(title, author, isbn);
         //console.log(book)
-        ui.addBookList(book)
-        ui.clearFields()
+        UI.addBookList(book)
+        UI.clearFields()
         e.preventDefault();
-
-        ui.showalert("Book Added!", "success")
+        UI.showalert("Book Added!", "success")
     }
+}
 
-
-    
+function removeBook(e){
+    UI.deleteFromBook(e.target);
+    UI.showalert("Book Removed!", "success");
+    e.preventDefault();
 }
 
 //UI Class
 class UI{ //To Add books in the table data
-    constructor(){
 
-    }
-    addBookList(book){
+    static addBookList(book){
         //console.log(book)
         let list = document.querySelector("#book-list");
         let row = document.createElement('tr');
@@ -58,13 +59,13 @@ class UI{ //To Add books in the table data
         
     }
 
-    clearFields(){
+    static clearFields(){
         let title= document.querySelector("#title").value = "";
         let author= document.querySelector("#author").value = "";
         let isbn= document.querySelector("#isbn").value = "";
     }
 
-    showalert(message, alertClassName){
+    static showalert(message, alertClassName){
         let div = document.createElement('div');
         div.className = `alert ${alertClassName}`; //will create a div with diff alert class of skeleton css
         div.appendChild(document.createTextNode(message));
@@ -75,6 +76,13 @@ class UI{ //To Add books in the table data
         setTimeout(function(){ //to vanish the alert after 3s
             document.querySelector(".alert").remove();
         }, 3000)
-
     }
+
+    static deleteFromBook(target){
+        if(target.hasAttribute('href')){
+            target.parentElement.parentElement.remove()
+        }
+        
+    }
+
 }
