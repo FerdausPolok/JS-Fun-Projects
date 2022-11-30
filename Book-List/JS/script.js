@@ -31,9 +31,9 @@ function newBook(e) {
         //console.log(book)
         UI.addBookList(book)
         UI.clearFields()
-        e.preventDefault();
         UI.showalert("Book Added!", "success")
     }
+    e.preventDefault();
 }
 
 function removeBook(e) {
