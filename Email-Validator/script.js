@@ -2,7 +2,7 @@ function validation() {
   let form = document.getElementById("form"); //getting the form
   let email = document.getElementById("email").value; //getting user given email
   let text = document.getElementById("text"); //getting the bottom note/ alert text
-  const EMAIL_PATTERN = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; //Regular Expression of email format
+  const EMAIL_PATTERN = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; //Regular Expression of email format
 
   if (email == "") {
     form.classList.remove("valid");
